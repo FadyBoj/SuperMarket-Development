@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up form</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Outfit:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+    
+
+        <form class="signup--form" action="/" method="POST" enctype="multipart/form-data">
+            <div class="error-message"><img class="warning--icon feedback--icon" src="../images/warning.png">
+                <p id="error-message"></p>
+            </div>
+            <p class="main--header">Create account</p><br>
+            <p class="second--header">Get started with our app<br> just create an account and enjoy the experience.</p>
+            <!--Google-->
+            <a href="auth/google"><div class='googleCon'>
+                <div class='googleCircle'>
+                    <img class='google-icon' src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg'>
+                </div>
+                <b class='box'>Sign up with google</b>
+              </div></a>
+
+            
+            <div class="orDivider"><img class="orIcon" src="../images/OrDivider.png"></div>
+
+              <!--Firstname & Lastname-->
+              <div class="names--field">
+
+                <div class="firstname--container">
+                    <div class="content">
+                    <div class="title"><p>First name</p></div>
+                    <input name="firstname" class="firstname" placeholder="John" type="text">
+                    </div>
+
+                    <!--Warning-->
+                    <div class="warning--container firstname--warning">
+                        <img class="warning--icon" src="../images/warning.png">
+                        <div class="warning--text"><p class="firstname--warningText">Too short</p></div>
+                    </div>
+                </div>
+
+                <div class="lastname--container">
+                    <div class="content">
+                    <div class="title"><p>Last name</p></div>
+                    <input name="lastname" class="lastname" placeholder="Pork" type="text">
+                    </div>
+                    <!--Warning-->
+                    <div class="warning--container lastname--warning">
+                        <img class="warning--icon" src="../images/warning.png">
+                        <div class="warning--text"><p class="lastname--warningText">Too short</p></div>
+                    </div>
+                </div>
+
+              </div>
+               <!--Email-->
+               <div class="email--field">
+                <div class="title">
+                    Email
+                </div>
+                <div class="email--container">
+
+                    <div class="email--input--container">
+                   <img class="emailIcon" src="../images/email.png">
+                   <input name="email" placeholder="name@mail.com" class="email--input" type="text">
+                   </div>
+
+                   <!--Warning-->
+
+                   <div class="warning--container email--warning">
+                    <img class="warning--icon" src="../images/warning.png">
+                    <div class="warning--text"><p class="email--warningText">Too short</p></div>
+                </div>
+
+                </div>
+               </div>
+
+
+                <!--Address-->
+                <div class="password--field">
+                    <div class="title">
+                        Address
+                    </div>
+    
+                    <div class="password--container">
+                    <div class="password--input--container">
+                       <img class="passwordIcon" src="../images/address.png">
+                       <input name="address" placeholder="Enter your address" class="address--input" type="text">
+                       </div>
+    
+                       <!--Warning-->
+    
+                       <div class="warning--container address--warning">
+                        <img class="warning--icon" src="../images/warning.png">
+                        <div class="warning--text"><p class="address--warningText">Too short</p></div>
+    
+                    </div>  
+                   </div>
+
+
+               <!--Password-->
+               <div class="password--field">
+                <div class="title">
+                    Passsword
+                </div>
+
+                <div class="password--container">
+                <div class="password--input--container">
+                   <img class="passwordIcon" src="../images/password.png">
+                   <input name="password" placeholder="••••••••••••••" class="password--input" type="password">
+                   </div>
+
+                   <!--Warning-->
+
+                   <div class="warning--container password--warning">
+                    <img class="warning--icon" src="../images/warning.png">
+                    <div class="warning--text"><p class="password--warningText">Too short</p></div>
+
+                </div>  
+               </div>
+
+
+               
+
+               <!--Submit-->
+               <button type="submit" class="submit--btn">Create account</button>
+
+               <div class="loginRoute"><p>Already have an account ? <span>Log in</span> </p></div>
+        </form>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/register-app.js"></script>
+</body>
+</html>

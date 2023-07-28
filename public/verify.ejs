@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/verify.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Delicious+Handrawn&family=Noto+Sans+Lao&family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    
+    <div class="vContainer">
+        <div class="error--msg--container" >
+            <img class="warning--icon" src="images/warning.png">
+            <p class="error--msg"></p></div>
+
+        <h1>Enter Your Verification Code</h1><br>
+        <div><img width="50px" src="../images/lock.png"></div><br>
+        <form id="verify--form" action="#" >
+            <input name="verificationCode" class="inpt" type="text" placeholder="XXXXXXX">
+            <div class="rWarning">
+                <div><ion-icon class="warningIcon" name="alert-circle-outline"></ion-icon></div>
+                <div class="rErrorMsg">Invalid Verification code</div>    
+            </div>
+            <button type="submit" id="boot" class="btn btn-success">Submit</button>
+        </form><br><br>
+
+
+        <div class="row">
+            <p>verify your email address to create your account.</p>
+            <p>We've sent an email to <span>name@email.com</span> with a verification code</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/verify.js"></script>
+</body>
+</html>

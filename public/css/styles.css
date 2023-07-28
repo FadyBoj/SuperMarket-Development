@@ -1,0 +1,385 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap:30px
+
+}
+
+.signup--form
+{
+    width: 588px;
+    min-height: 650px;
+    background-color: white;
+    box-shadow: 0 0px 30px 0px gray;
+    border-radius: 16px;
+    padding-top: 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+
+}
+
+.signup--form .main--header{
+    font-size: 26px;
+    font-weight: 700;
+    font-family: Outfit;
+
+}
+.signup--form .second--header{
+    color:#706e6e;
+    font-family: Inter;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.googleCon,.facebook--con{
+    margin-top:24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    min-height: 40px;
+    border-radius: 8;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.25);
+    color:black;
+    transition: all 0.2s;
+    font-size:16px;
+    font-family: Outfit;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.googleCircle{
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:white;
+    position: absolute;
+    left: 0px;
+ 
+}
+
+.google-icon{
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 11px;
+    width: 25px;
+    transform: translateY(-4.5px);
+
+}
+
+.facebook--icon{
+    position: absolute;
+    left: 0px;
+    width: 27px;
+    margin-top: 11px;
+    margin-left: 11px;
+    transform: translateY(-4.5px);
+}
+
+.box {
+    width: 1000px;
+    text-align: center
+}
+
+.googleCon:hover{
+    box-shadow: 0 0 6px #4285F4;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.facebook--con:hover{
+    box-shadow: 0 0 6px #4285F4;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+a{
+    text-decoration: unset;
+}
+
+.orIcon{
+    width: 300px;
+}
+
+.orDivider{
+    margin-top:24px
+}
+ 
+.email--field{
+    margin-top:15px;
+}
+
+.email--container,.password--container{
+    width: 100%;
+}
+
+.email--field,.password--field{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:3px;
+}
+
+.email--field .title,.password--field .title{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: start;
+    font-family: Outfit;
+    color: #706e6e;
+}
+
+.email--input--container,.password--input--container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 46px;
+}
+.email--input,.password--input,.address--input{
+    width: 100%;
+    height: 40px;
+    padding-left: 50px;
+    font-size: 16px;
+    border-radius: 8px;
+    outline:solid 1px rgb(199, 194, 194);
+    border: unset;
+    transition: ease-in-out  100ms;
+}
+
+.email--input:focus,.password--input:focus{
+    outline:solid 2px rgb(59, 142, 224);
+}
+
+.emailIcon,.passwordIcon{
+    width: 20px;
+    position: absolute;
+    left:8px;
+    top:10px
+}
+
+.password--field    {
+    margin-top:20px
+}
+
+.submit--btn{
+    width: 300px;
+    min-height: 48px;
+    background-color: #000000;
+    border-radius: 8px;
+    border:unset;
+    margin-top:32px;
+    color:white;
+    font-family: Outfit;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.25);
+    transition: all 0.2s;
+
+}
+.submit--btn:hover{
+    box-shadow: 0 2px 20px 0 #0e1014;
+    transform: translateY(-4px);
+
+}
+
+.loginRoute{
+    margin-top: 16px;
+    font-size: 14px;
+    font-family: Outfit;
+}
+
+.loginRoute span{
+    color: #9C6FFF;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.names--field{
+    width: 500px;
+    display: flex;
+    justify-content:space-between;
+    gap:15px
+}
+
+
+.firstname,.lastname{
+    width: 230px;
+    height: 250px;
+    padding-left: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    outline: unset;
+    transition: ease-in-out  100ms;
+    border: unset;
+    outline:solid 1px rgb(199, 194, 194);
+    height: 40px;
+
+}
+
+.firstname--container,.lastname--container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap:5px
+}
+
+.firstname--container .title,.lastname--container .title{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    font-family: Outfit;
+    color: #706e6e;
+    height: 25px;
+}
+
+.firstname:focus,.lastname:focus{
+   outline:solid 2px rgb(59, 142, 224);
+   border: unset;
+}
+
+.warning--container{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    transform: translateY(5px);
+    display: none;
+    font-size: 14px;
+}
+
+.warning--icon{
+    width: 20px;
+}
+
+.warning--text{
+    font-family: Outfit;
+    color:#ff2147;
+    width: 100%;
+}
+
+
+@media screen and (max-width:616px) {
+    .signup--form{
+        width: 90%;
+    }
+
+    @media screen and (max-width:590px) {
+        .names--field{
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+  
+        .orDivider img{
+            width: 240px;
+        }
+        .names--field .content{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .firstname--container,.lastname--container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .warning--container{
+            width: 90%;
+            justify-content: start;
+        }
+
+        .names--field .title{
+            width: 90%;
+        }
+
+        .firstname,.lastname{
+            width:90%;
+        }
+
+        .email--field .title,.password--field .title{
+            width: 90%;
+        }
+
+        .email--container,.email--field,.password--field,.password--container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .email--input,.password--input,.address--input{
+            width: 90%;
+        }
+        .emailIcon,.passwordIcon{
+            left: 7%;
+        }
+
+        @media screen and (max-width:415px) {
+            .signup--form{
+            }
+            .googleCon,.facebook--con{
+                width: 90%;
+            }
+            .submit--btn{
+                width: 90%;
+            }
+
+
+            @media screen  and (max-width:330px) {
+                .googleCon,.facebook--con{
+                    font-size: 14px;
+                }
+
+                .google-icon,.facebook--icon{
+                    width: 20px;
+                }
+            }
+
+        }
+
+    }
+
+
+}
+
+.error-message{
+    font-family: Outfit;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap:10px;
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.feedback--icon{
+    display: none;
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+   <link rel="stylesheet" href="../css/Cart.Css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href = "https: //fonts.googleapis.com/css2family = Poppins: wght @ 500 & display = swap "rel =" stylesheet ">
+</head>
+<body>
+  <div id="navbar">
+    <div style="display: flex; align-items: center;">
+      <img id="logo" src="../images\logo1.png" alt="Logo">
+      <a href="/"><i class="fas fa-home"></i> Home</a>
+      <a href="/products"><i class="fas fa-shopping-bag"></i> Products</a>
+      <% if (req.session.normalUser || req.session.isAdmin ){ %>
+        <a href="/logout"><i class="fas fa-sign-in-alt"></i> Logout</a>
+        <% }%>
+        <% if (!req.session.normalUser && !req.session.isAdmin){ %>
+          <a href="/login"><i class="fas fa-sign-in-alt"></i> Log in</a>
+          <% }%>
+      <a href ="/products/cart "><i class="fas fa-shopping-cart"></i> Cart</a>
+      <% if (req.session.isAdmin){ %>
+      <a href="/admin/addproduct "><i></i>Add product</a>
+      <a href="/admin/orders "><i></i><div class="orders">
+        <% if(req.session.ordersLength) { %>
+        <div class="orders--length"><%= req.session.ordersLength %></div>
+        <% } %>
+        <div>Orders</div></div></a>
+      <% } %>
+      
+
+    </div>
+
+    <div class="containers1">
+      <input placeholder="Type to search..." required="" class="input1 searchInput" name="text" type="text">
+      <div class="icon1">
+          <svg viewBox="0 0 512 512" class="ionicon1 searchBtn" xmlns="http://www.w3.org/2000/svg">
+              <title>Search</title>
+              <path stroke-width="32" stroke-miterlimit="10" stroke="currentColor" fill="none" d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"></path>
+              <path d="M338.29 338.29L448 448" stroke-width="32" stroke-miterlimit="10" stroke-linecap="round" stroke="currentColor" fill="none"></path>
+         </svg>
+      </div>
+    </div> 
+  </div>
+
+  <div id="bar">
+    <a href="/products?category=Legumes"><div>Legumes</div></a>
+    <a href="/products?category=Frozen Foods"><div>Frozen Foods</div></a>
+    <a href="/products?category=Sweets"><div>Sweets</div></a>
+    <a href="/products?category=Canned Food"><div>Canned Food</div></a>
+    <a href="/products?category=Cleaning Products"><div>Cleaning Products</div></a>
+    <a href="/products?category=Carbonated Water"><div>Carbonated Water</div></a>
+    <a href="/products?category=Vegetables And Fruits"><div>Vegetables And Fruits</div></a>
+  </div>
+  <br><br>
+  <div class="error--msg">
+    <div><img class="warning--icon" src="../images/warning.png" /></div>
+    <div><p class="error"></p></div>
+  </div>
+  <div class="totale">
+    <div class="frame">
+        <h1 class="CART1">Shopping Cart</h1>
+        
+          <ul  class="cart cartContainer"> 
+            <% for(let i = 0; i < cartProducts.length; i++) { %>
+              <li data-id=<%= cartProducts[i]._id %> class="product">
+                <div class="price">
+                  <div class="ther">$<%= cartProducts[i].price %></div> 
+                  <div class="okw">
+                    <select  class="custom-select">
+                      <option data-p=<%= cartProducts[i]._id %> class=<%= 's' + i %> value="Qty: 1">Qty: 1</option>
+                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 2">Qty: 2</option>
+                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 3">Qty: 3</option>
+                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 4">Qty: 4</option>
+                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 5">Qty: 5</option>
+                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 6">Qty: 6</option>
+                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 7">Qty: 7</option>
+                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 8">Qty: 8</option>
+                      <option data-id=<%= cartProducts[i]._id %>   class=<%= 's'+ i %> value="Qty: 9">Qty: 9</option>
+                    </select>
+                    <div><button data-id=<%= i %> class="btn1">
+                      
+                     <svg  viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
+                     <path  transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
+                   </svg>
+                   </button>
+                  </div>
+                  </div>
+                   </div>
+                    <div class="details">
+                      <img src="<%= cartProducts[i].image %>" alt="Producer" 1>
+                      <div class="name"><%= cartProducts[i].title %></div>
+                    </div>
+                </li>
+
+                <% } %>
+               
+            </ul>
+            
+      </div>
+      <div class="details1">
+        <div class="style1">
+          Number of Items: <span id="totalItems"></span></div>
+        <div class="style2">
+         Total: <span id="totalPrice">$0</span>
+        </div>
+        <div class="container">
+          <button class="purchase-button">Proceed to Checkout </button>
+        </div>
+        
+      </div>
+    </div>
+  
+  <footer>
+    <section class="client-container1">
+      <div id="clinet1">
+          <div class="client-item1">
+              <ul>
+                  <li><a href="">About Us</a></li>
+                  <li><a href="">Job Application</a></li>
+                  <li><a href="">Polices</a></li>
+                  <li><a href="">Quality</a></li>
+                  <li><a href="">Customer Service</a></li>
+              </ul>
+          <br><br>
+          <pre>Connect With US</pre> <br>
+              <br> 
+              
+          <div class="pics1">
+         <div class="light2-button1">
+          <button class="bt1">
+              <div class="light2-holder1">
+                  <div class="dot1"></div>
+                  <div class="light2"></div>
+              </div>
+              <div class="button-holder1">
+                  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2C6.475 2 2 6.475 2 12c0 5.068 3.706 9.236 8.548 9.972v-7.072h-2.51V12h2.51V9.587c0-2.485 1.472-3.858 3.745-3.858 1.078 0 1.938.08 2.196.115v2.58h-1.508c-1.182 0-1.416.562-1.416 1.392V12h2.85l-.368 2.91h-2.482v7.072C18.294 21.236 22 17.068 22 12c0-5.525-4.475-10-10-10z"></path>
+                  </svg>
+                  <p>Facebook</p>
+              </div>
+          </button>
+        </div>
+
+
+
+        <div class="social-button">
+          <button class="bt1n">
+              <div class="light2-holder1">
+                  <div class="dot1"></div>
+                  <div class="light2"></div>
+              </div>
+              <div class="button-holder1">
+                  <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.954 4.569c-.885.389-1.832.652-2.83.771a4.983 4.983 0 002.197-2.747 9.94 9.94 0 01-3.151 1.202 4.98 4.98 0 00-8.493 4.546A14.086 14.086 0 011.678 3.032a4.98 4.98 0 001.54 6.642A4.936 4.936 0 011.033 8.62v.062a4.979 4.979 0 004.006 4.876 4.98 4.98 0 01-2.247.085 4.98 4.98 0 004.64 3.458A9.988 9.988 0 010 19.945a14.07 14.07 0 007.596 2.222c9.12 0 14.089-7.551 14.089-14.09 0-.214-.005-.428-.014-.64a10.037 10.037 0 002.466-2.558l-.047.02z"/>
+                  </svg>
+                  <p>Twitter</p>
+              </div>
+          </button>
+      </div>
+        
+
+
+      <div class="YouTube-button">
+        <!-- قم بتغيير اسم الـ class والـ id هنا -->
+        <button class="my-button">
+          <div class="light2-holder1">
+            <div class="dot1"></div>
+            <div class="light2"></div>
+          </div>
+          <div class="button-holder1">
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.027 7.164c-0.18-0.64-0.717-1.137-1.376-1.315C17.527 5 12 5 12 5S6.473 5 4.349 5.849c-0.659 0.178-1.195 0.675-1.376 1.315C2 8.113 2 12 2 12s0 3.887 0.973 4.836c0.181 0.64 0.717 1.137 1.376 1.315C6.473 19 12 19 12 19s5.527 0 7.651-0.849c0.659-0.178 1.195-0.675 1.376-1.315C22 15.887 22 12 22 12s0-3.887-0.973-4.836zM9.5 15V9l6 3-6 3z"></path>
+            </svg>
+            <p>YouTube</p>
+          </div>
+        </button>
+      </div>
+
+
+      
+<div class="Instagram-button">
+              <button class="Instagram_bt1">
+                  <div class="light2-holder1">
+                      <div class="dot1"></div>
+                      <div class="light2"></div>
+                  </div>
+                  <div class="button-holder1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="512" viewBox="0 0 512 512"><title>ionicon1s-v5_logos</title><path d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"/><path d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"/><path d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"/></svg>
+                    <p>Instagram</p>
+                </div>
+                
+              </button>
+          </div>
+         
+
+          
+  </div>
+  </div>
+  </div>
+  <br>
+  <br> <br> <br>
+  <pre class="footp">Copyright &copy; www.UltraMarket.com All Rights Reserved.</pre>
+  <br><br>
+      </section>
+  </footer>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../js/Cart.js"></script>
+</body>
+</html>

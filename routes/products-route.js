@@ -11,7 +11,8 @@ const
     modifyCart,
     deleteCartItem,
     cartItems,
-    addOrder
+    addOrder,
+    previousPurchasesPage
 } = require('./../controllers/products');
 
 
@@ -21,7 +22,7 @@ router.route('/cartitems').get(cartItems);
 router.route('/add-to-cart').post(addToCart);
 router.route('/modify-cart').put(modifyCart)
 router.route('/modify-cart/:id').delete(deleteCartItem);
-
+router.route('/previous-purchases').get(homeAuth,orderAuth,previousPurchasesPage);
 router.route('/add-order').post(orderAuth,addOrder);
 
 

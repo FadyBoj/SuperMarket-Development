@@ -68,7 +68,8 @@ const login = async(req,res) =>{
         email:checkUser[0].email,
         verified:checkUser[0].verified,
         isAdmin:checkUser[0].Admin,
-        address:checkUser[0].address
+        address:checkUser[0].address,
+        previousOrders:checkUser[0].previousOrders
     }
 
 
@@ -120,7 +121,8 @@ const verify = async (req,res) =>{
             email:user[0].email,
             verified:true,
             isAdmin:user[0].Admin,
-            address:user[0].address
+            address:user[0].address,
+            previousOrders:user[0].previousOrders
         }
     
         const token = jwt.sign(userInfo,process.env.JWT_SECRET,{expiresIn:'1d'});
@@ -202,7 +204,8 @@ const createUser = async (req,res) =>{
             email:createdUser.email,
             verified:createdUser.verified,
             isAdmin:createdUser.Admin,
-            address:createdUser.address
+            address:createdUser.address,
+            previousOrders:createdUser.previousOrders
         }
     
         const token = jwt.sign(userInfo,process.env.JWT_SECRET,{expiresIn:'1d'});
@@ -233,7 +236,8 @@ const googleSignup = async(req,res) =>{
                 email:checkUser[0].email,
                 verified:checkUser[0].verified,
                 isAdmin:checkUser[0].Admin,
-                address:checkUser[0].address
+                address:checkUser[0].address,
+                previousOrders:checkUser[0].previousOrders
             }
 
             const token = jwt.sign(userInfo,process.env.JWT_SECRET,{expiresIn:'1d'});
@@ -264,7 +268,8 @@ const googleSignup = async(req,res) =>{
         email:createdUser.email,
         verified:createdUser.verified,
         isAdmin:createdUser.Admin,
-        address:createdUser.address
+        address:createdUser.address,
+        previousOrders:createdUser.previousOrders
     }
 
     const token = jwt.sign(userInfo,process.env.JWT_SECRET,{expiresIn:'1d'});
@@ -331,7 +336,8 @@ const getGoogleData = async(req,res) =>{
             email:updatedUser[0].email,
             verified:updatedUser[0].verified,
             isAdmin:updatedUser[0].Admin,
-            address:updatedUser[0].address
+            address:updatedUser[0].address,
+            previousOrders:updatedUser[0].previousOrders
         }
 
         const token = jwt.sign(userInfo,process.env.JWT_SECRET,{expiresIn:'1d'});

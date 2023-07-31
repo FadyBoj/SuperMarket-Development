@@ -17,7 +17,9 @@ const {
     addProduct,
     uploadProduct,
     ordersPage,
-    singleOrder
+    singleOrder,
+    productsPage,
+    deleteProduct
 } = require('../controllers/admin')
 
 router.route('/productslist').get(getProducts);
@@ -25,8 +27,9 @@ router.route('/product/:id').get(getSingleProduct);
 router.route('/addproduct').get(adminAuth,addProduct);
 router.route('/orders').get(homeAuth,adminAuth,ordersPage)
 router.route('/orders/:id').get(homeAuth,adminAuth,singleOrder)
-
+router.route('/product-list').get(productsPage);
 router.route('/uploadproduct').post(upload.single('image'),uploadProduct);
+router.route('/delete-product').post(deleteProduct);
 
 
 

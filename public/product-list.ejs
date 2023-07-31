@@ -2,14 +2,15 @@
 <html>
 <head>
   <title></title>
-   <link rel="stylesheet" href="../css/Cart.Css">
+   <link rel="stylesheet" href="../../css/product-list.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href = "https: //fonts.googleapis.com/css2family = Poppins: wght @ 500 & display = swap "rel =" stylesheet ">
 </head>
 <body>
+  <div class="loading--container"><span class="loader"></span></div>
   <div id="navbar">
     <div style="display: flex; align-items: center;">
-      <img id="logo" src="../images\logo1.png" alt="Logo">
+      <img id="logo" src="../../images\logo1.png" alt="Logo">
       <a href="/"><i class="fas fa-home"></i> Home</a>
       <a href="/products"><i class="fas fa-shopping-bag"></i> Products</a>
       <% if (req.session.normalUser || req.session.isAdmin ){ %>
@@ -32,9 +33,9 @@
     </div>
 
     <div class="containers1">
-      <input placeholder="Type to search..." required="" class="input1 searchInput" name="text" type="text">
+      <input placeholder="Type to search..." required="" class="input1" name="text" type="text">
       <div class="icon1">
-          <svg viewBox="0 0 512 512" class="ionicon1 searchBtn" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 512 512" class="ionicon1" xmlns="http://www.w3.org/2000/svg">
               <title>Search</title>
               <path stroke-width="32" stroke-miterlimit="10" stroke="currentColor" fill="none" d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"></path>
               <path d="M338.29 338.29L448 448" stroke-width="32" stroke-miterlimit="10" stroke-linecap="round" stroke="currentColor" fill="none"></path>
@@ -44,73 +45,48 @@
   </div>
 
   <div id="bar">
-    <a href="/products?category=Legumes"><div>Legumes</div></a>
-    <a href="/products?category=Frozen Foods"><div>Frozen Foods</div></a>
-    <a href="/products?category=Sweets"><div>Sweets</div></a>
-    <a href="/products?category=Canned Food"><div>Canned Food</div></a>
-    <a href="/products?category=Cleaning Products"><div>Cleaning Products</div></a>
-    <a href="/products?category=Carbonated Water"><div>Carbonated Water</div></a>
-    <a href="/products?category=Vegetables And Fruits"><div>Vegetables And Fruits</div></a>
+    <div>Legumes</div>
+    <div>Frozen Foods</div>
+    <div>Sweets</div>
+    <div>Canned Food</div>
+    <div>Cleaning Products</div>
+    <div>Carbonated Water</div>
+    <div>Vegetables And Fruits</div>
   </div>
-  <br><br>
-  <div class="error--msg">
-    <div><img class="warning--icon" src="../images/warning.png" /></div>
-    <div><p class="error"></p></div>
-  </div>
-  <div class="totale">
-    <div class="frame">
-        <h1 class="CART1">Shopping Cart</h1>
-        
-          <ul  class="cart cartContainer"> 
-            <% for(let i = 0; i < cartProducts.length; i++) { %>
-              <li data-id=<%= cartProducts[i]._id %> class="product">
-                <div class="price">
-                  <div class="ther">$<%= cartProducts[i].price %></div> 
-                  <div class="okw">
-                    <select  class="custom-select">
-                      <option data-p=<%= cartProducts[i]._id %> class=<%= 's' + i %> value="Qty: 1">Qty: 1</option>
-                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 2">Qty: 2</option>
-                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 3">Qty: 3</option>
-                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 4">Qty: 4</option>
-                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 5">Qty: 5</option>
-                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 6">Qty: 6</option>
-                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 7">Qty: 7</option>
-                      <option data-id=<%= cartProducts[i]._id %> class=<%= 's'+ i %> value="Qty: 8">Qty: 8</option>
-                      <option data-id=<%= cartProducts[i]._id %>   class=<%= 's'+ i %> value="Qty: 9">Qty: 9</option>
-                    </select>
-                    <div><button data-id=<%= i %> class="btn1">
-                      
-                     <svg  viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
-                     <path  transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
-                   </svg>
-                   </button>
-                  </div>
-                  </div>
-                   </div>
-                    <div class="details">
-                      <img src="<%= cartProducts[i].image %>" alt="Producer" 1>
-                      <div class="name"><%= cartProducts[i].title %></div>
-                    </div>
-                </li>
+  <br><br><br>
 
-                <% } %>
-               
-            </ul>
-            
-      </div>
-      <div class="details1">
-        <div class="style1">
-          Number of Items: <span id="totalItems"></span></div>
-        <div class="style2">
-         Total: <span id="totalPrice">$0</span>
-        </div>
-        <div class="container">
-          <button class="purchase-button">Proceed to Checkout </button>
-        </div>
-        
-      </div>
+  <form class="my_form">
+    <h1 class="textxrt">Product List</h1>
+    <div class="search-container">
+      <input type="text" id="search" class="search-input" placeholder="Enter product name...">
+      <button type="button" class="search-button" onclick="searchProducts()">Search</button>
     </div>
-  
+    <table id="productTable">
+      <!--
+      <tr>
+        <th>Product Image</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Edit Product</th>
+        <th>Delete Product</th>
+      </tr>
+      <tr>
+        <div class="productxx">
+        <td><img class="imgx" src="product1.jpg" alt="Product 1"></td>
+        <td>Product 1</td>
+        <td>100</td>
+        <td>50</td>
+        <td><button type="button" disabled>Edit</button></td>
+        <td><button type="button" onclick="deleteProduct(this)">Delete</button></td>
+      </div>
+      </tr>
+    -->
+    </table>
+  </form>
+
+
+  <br>
   <footer>
     <section class="client-container1">
       <div id="clinet1">
@@ -204,8 +180,7 @@
   <br><br>
       </section>
   </footer>
-  <script src="/socket.io/socket.io.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="../js/Cart.js"></script>
+  <script src="../js/product-list.js"></script>
 </body>
 </html>

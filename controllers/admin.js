@@ -19,15 +19,29 @@ cloudinary.config({
   });
 
 
+const productsPage = (req,res) =>{
+  res.status(200).render(Path.join(rootDirectory,'public','product-list.ejs'),{
+    req:req
+  })
+}
+
 const getProducts = async(req,res) =>{
     const products = await Product.find({});
     res.status(200).json(products);
 }
 
+
+
 const getSingleProduct = async(req,res) =>{
     const {id} = req.params;
     console.log(id);
     res.json({msg:`Product id: ${id}`})
+}
+
+const deleteProduct = async(req,res) =>{
+  const { id } = req.body;
+  const product = await Product.findOneAndDelete({_id:id})
+  res.status(200).json({msg:'ok'})
 }
 
 const addProduct = async(req,res) =>{
@@ -148,6 +162,8 @@ const singleOrder = async(req,res) =>{
 
 module.exports = {
     getProducts,
+    deleteProduct,
+    productsPage,
     getSingleProduct,
     uploadProduct,
     addProduct,

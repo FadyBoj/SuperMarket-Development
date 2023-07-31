@@ -128,9 +128,16 @@ const addToCart = async(req,res) =>{
 }
 
 const addOrder = async(req,res) =>{
-    const quantity = req.session.productId.map((item)=>{
-        return item.qty
-    })
+    let quantity
+    try {
+        
+        quantity = req.session.productId.map((item)=>{
+           return item.qty
+       })
+    } catch (error) {
+        throw new badRequestError('Cart is empty.');
+
+    }
     
     let products;
     try {
@@ -167,20 +174,47 @@ const addOrder = async(req,res) =>{
         const newOrderToClient =
         {
             id:createdOrder._id,
-            senderInfo:{id:req.user.id,name:req.user.firstname + ' ' + req.user.lastname,address:req.user.address},
             cartItems:products,
             totalPrice:totalPrice,
-            quantity:quantity
+            quantity:quantity,
+            orderDate:createdOrder.createdAt
         }
         const prevOrders = await Person.find({_id:req.user.id})
         await Person.findOneAndUpdate({_id:req.user.id},{previousOrders:[...prevOrders[0].previousOrders,newOrderToClient]});
-    } catch (error) {
+    } catch (error) {   
         console.log(error)
     }
     
     delete req.session.productId;
     res.status(200).json({msg:'Successfully sent the order'});
 }
+
+const previousPurchasesPage = async(req,res) =>{
+    const { id } = req.user;
+   
+    const user = await Person.find({_id:id});
+    const previousOrders = user[0].previousOrders
+
+    let result = [];
+
+    const setResult = async ()=>{
+        await Promise.all(previousOrders.map(async(item)=>{
+            const ids = item.cartItems.map((cartItem)=>{
+                return cartItem;
+            })
+            const products = await Product.find({_id:{$in:ids}});
+            result.push({products,orderDate:item.orderDate})
+        }));
+    }
+
+    await setResult();
+
+    res.status(200).render(path.join(rootDirectory,'public','previous.ejs'),{
+        req:req,
+        result:result
+    })
+}
+
 
 module.exports = {getAllProducts,
                   productsPage,
@@ -189,5 +223,6 @@ module.exports = {getAllProducts,
                   modifyCart,
                   deleteCartItem,
                   cartItems,
-                  addOrder
+                  addOrder,
+                  previousPurchasesPage
                  };

@@ -5,6 +5,15 @@ const app = express();
 const ConnectDB = require('./db/connect');
 const path = require('path');
 
+const http = require('http').createServer(app)
+const io = require('socket.io')(http);
+
+io.on('connection',socket=>{
+    socket.on('orderAdded',msg=>{
+        socket.broadcast.emit('orderAdded','NULL');
+    })
+})
+
 // products route
 const productsApi = require('./routes/api-products-route');
 const users = require('./routes/users-route');
@@ -65,7 +74,7 @@ const Start = async () =>{
     try {
         await ConnectDB(process.env.MONGO_URI);
 
-        app.listen(port,()=>{
+        http.listen(port,()=>{
             console.log(`Server is Running on port ${port}...`);
         })
         

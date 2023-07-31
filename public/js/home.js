@@ -79,3 +79,29 @@ var slideIndex = 0;
     searchBtn.addEventListener('click',()=>{
       window.location.href = `/products?search=${searchInput.value}`
     })
+
+
+    //handle order length
+
+    const orderLength = document.getElementsByClassName('orders--length')[0];
+
+    const socket = io();
+
+
+    const setOrderLength = async()=>{
+      try {
+        const cartItems = await axios.get('/products/cartitems',{
+          headers:{
+            'x-requested-with':'XMLHttpRequest'
+          }
+        })
+       window.location.href = '/  '
+        
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+    socket.on('orderAdded',(msg)=>{
+      setOrderLength();
+    })

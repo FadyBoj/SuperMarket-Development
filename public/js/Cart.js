@@ -10,6 +10,7 @@ const warningIcon = document.getElementsByClassName('warning--icon')[0];
 const trashIcon = document.getElementsByClassName('btn1');
 const cartItem = document.getElementsByClassName('product');
 
+const socket = io();
 
 
 
@@ -38,7 +39,7 @@ checkOutBtn.addEventListener('click',async() =>{
         warningIcon.style.display = 'none';
         totalItems.textContent = 0;
         totalPriceDom.textContent = 0;
-        
+        socket.emit('orderAdded','msg')
         
     } catch (error) {
         if(error.response.data.msg === 'Token must be provided.')

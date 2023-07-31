@@ -1,0 +1,682 @@
+
+#bar {
+  top: 80px;
+}
+#navbar {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 999;
+}
+#navbar a {
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px;
+  font-size: 20px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+body {
+   
+   font-family: Arial, sans-serif;
+   background-color: #ccc;
+  margin: 0;
+  padding-top: 80px;
+}
+
+li{
+  font-size: 150%;
+}
+pre{
+  font-size: 190%;
+  top: auto;
+}
+.containers1 {
+  position: relative;
+  --size-button: 40px;
+}
+.input1 {
+  padding-left: var(--size-button);
+  height: var(--size-button);
+  font-size: 15px;
+  border: none;
+  color: #fff;
+  outline: none;
+  width: var(--size-button);
+  transition: all ease 0.3s;
+  background-color: #191A1E;
+  box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.input1:focus,
+.input1:not(:invalid) {
+  width: 200px;
+  cursor: text;
+  box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+}
+
+.input1:focus + .icon1,
+.input1:not(:invalid) + .icon1 {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.containers1 .icon1 {
+  color: #ffffff;
+  position: absolute;
+  width: var(--size-button);
+  height: var(--size-button);
+  top: 0;
+  left: 0;
+  padding: 8px;
+  pointer-events: none;
+}
+
+.containers1 .icon1 svg {
+  width: 100%;
+  height: 100%;
+}
+
+#logo {
+  width: 10%;
+  height: auto;
+  margin-right: 4%;
+  margin-left: 10px;
+  float: left;
+}
+
+#bar {
+  padding-bottom: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #333;
+  height: 30px;
+  font-size: 16px;
+  text-align: center;
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  z-index: 998;
+}
+
+#bar div {
+  justify-content: center;
+  width: 300px;
+  padding: 9px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: #ffffff;
+}
+
+#bar div:hover {
+  background-color: #ddd;
+  color: #000000;
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+    footer{
+      padding: 3%;
+      width: 100%;
+      height: 20%;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      color: #ffffff;
+    
+    }
+    ul li a:hover{
+      background-color: #ddd;
+      color: #000;
+    }
+
+    ul li{
+
+      display:inline-block;
+      margin-right: 1%;
+    }
+    ul li a{
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 10px;
+
+    }
+    .Connect_With_US{
+      margin-right: 1%;
+    }
+
+    .pics1{
+     display: flex;
+     flex-direction: row;
+     gap: 2%;
+    }
+
+    .Instagram-button button.Instagram_bt1 {
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      outline: none;
+      background: none;
+      border: none;
+    }
+    
+    .Instagram-button button.Instagram_bt1 .button-holder1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+      background-color: #4a4949;
+      border-radius: 5px;
+      color: #0f0f0f;
+      font-weight: 700;
+      transition: 300ms;
+      outline: #0f0f0f 2px solid;
+      outline-offset: 20;
+    }
+    
+    .Instagram-button button.Instagram_bt1 .button-holder1 svg {
+      height: 50px;
+      fill: #0f0f0f;
+      transition: 300ms;
+    }
+    
+    .Instagram-button button.Instagram_bt1 .light2-holder1 {
+      position: absolute;
+      height: 200px;
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .Instagram-button button.Instagram_bt1 .light2-holder1 .dot1 {
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background-color: #E4405F;
+      border-radius: 10px;
+      z-index: 2;
+    }
+    
+    .Instagram-button button.Instagram_bt1 .light2-holder1 .light2 {
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+      background: transparent;
+    }
+    
+    .Instagram-button button.Instagram_bt1:hover .button-holder1 svg {
+      fill: #E4405F; /* تغيير لون الشعار الخاص بـ Instagram */
+    }
+    
+    .Instagram-button button.Instagram_bt1:hover .button-holder1 {
+      color: #E4405F; /* تغيير لون النص إلى لون Instagram */
+      outline: #E4405F 2px solid; /* تغيير لون الحدود إلى لون Instagram */
+      outline-offset: 2px;
+    }
+    
+    .Instagram-button button.Instagram_bt1:hover .light2-holder1 .light2 {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(180deg, #E4405F 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .light2-button1 button.bt1 {
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      outline: none;
+      background: none;
+      border: none;
+    }
+    
+    .light2-button1 button.bt1 .button-holder1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+      background-color: #4a4949;
+      border-radius: 5px;
+      color: #0f0f0f;
+      font-weight: 700;
+      transition: 300ms;
+      outline: #0f0f0f 2px solid;
+      outline-offset: 20;
+    }
+    
+    .light2-button1 button.bt1 .button-holder1 svg {
+      height: 50px;
+      fill: #0f0f0f;
+      transition: 300ms;
+    }
+    
+    .light2-button1 button.bt1 .light2-holder1 {
+      position: absolute;
+      height: 200px;
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .light2-button1 button.bt1 .light2-holder1 .dot1 {
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background-color: rgb(59, 89, 152);
+      border-radius: 10px;
+      z-index: 2;
+    }
+    
+    .light2-button1 button.bt1 .light2-holder1 .light2 {
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+      background: transparent;
+    }
+    
+    .light2-button1 button.bt1:hover .button-holder1 svg {
+      fill: rgb(59, 89, 152); /* تغيير لون الشعار الخاص بـ Facebook */
+    }
+    
+    .light2-button1 button.bt1:hover .button-holder1 {
+      color: rgba(59, 89, 152, 1); /* تغيير لون النص إلى اللون الخاص بـ Facebook */
+      outline: rgba(59, 89, 152, 1) 2px solid; /* تغيير لون الحدود إلى اللون الخاص بـ Facebook */
+      outline-offset: 2px;
+    }
+    
+    .light2-button1 button.bt1:hover .light2-holder1 .light2 {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(180deg, rgba(59, 89, 152, 1) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+    }
+
+
+    .social-button button.bt1n {
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      outline: none;
+      background: none;
+      border: none;
+    }
+    
+    .social-button button.bt1n .button-holder1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+      background-color: #4a4949;
+      border-radius: 5px;
+      color: #0f0f0f;
+      font-weight: 700;
+      transition: 300ms;
+      outline: #0f0f0f 2px solid;
+      outline-offset: 20;
+    }
+
+    .social-button button.bt1n .button-holder1 svg {
+      height: 50px;
+      fill: #0f0f0f;
+      transition: 300ms;
+    }
+    
+    .social-button button.bt1n .light2-holder1 {
+      position: absolute;
+      height: 200px;
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .social-button button.bt1n .light2-holder1 .dot1 {
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background-color: #1da1f2;
+      border-radius: 10px;
+      z-index: 2;
+    }
+    
+    .social-button button.bt1n .light2-holder1 .light2 {
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+      background: transparent;
+    }
+    
+    .social-button button.bt1n:hover .button-holder1 svg {
+      fill: #1da1f2;
+    }
+    
+    .social-button button.bt1n:hover .button-holder1 {
+      color: #1da1f2;
+      outline: #1da1f2 2px solid;
+      outline-offset: 2px;
+    }
+    
+    .social-button button.bt1n:hover .light2-holder1 .light2 {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(180deg, #1da1f2 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+    }
+
+
+    .YouTube-button button.my-button {
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      outline: none;
+      background: none;
+      border: none;
+    }
+
+    .YouTube-button button.my-button .button-holder1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+      background-color: #4a4949;
+      border-radius: 5px;
+      color: #0f0f0f;
+      font-weight: 700;
+      transition: 300ms;
+      outline: #0f0f0f 2px solid;
+      outline-offset: 20;
+    }
+
+    .YouTube-button button.my-button .button-holder1 svg {
+      height: 50px;
+      fill: #0f0f0f;
+      transition: 300ms;
+    }
+
+    .YouTube-button button.my-button .light2-holder1 {
+      position: absolute;
+      height: 200px;
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .YouTube-button button.my-button .light2-holder1 .dot1 {
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 0, 0, 1);
+      border-radius: 10px;
+      z-index: 2;
+    }
+
+    .YouTube-button button.my-button .light2-holder1 .light2 {
+      position: absolute;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+      background: transparent;
+    }
+
+    .YouTube-button button.my-button:hover .button-holder1 svg {
+      fill: rgba(255, 0, 0, 1);
+    }
+
+    .YouTube-button button.my-button:hover .button-holder1 {
+      color: rgba(255, 0, 0, 1);
+      outline: rgba(255, 0, 0, 1) 2px solid;
+      outline-offset: 2px;
+    }
+
+    .YouTube-button button.my-button:hover .light2-holder1 .light2 {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(180deg, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    * {box-sizing: border-box}
+    
+
+   
+
+        h1 {
+            text-align: center;
+        }
+
+        .cart {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product {
+            justify-content: space-between;
+            display: flex;
+            align-items: start;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .product .details {
+            gap: 6%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .cart {
+          list-style: none;
+          padding: 0;
+          height: 120%;
+        }
+        .name {
+            width: 40%;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+            order: 2; /* تغيير ترتيب العنصر */
+        }
+
+        .frame {
+          background-color: rgb(255, 255, 255);
+          width: 80%;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .price {
+          flex-direction: column;
+          justify-content: space-between;
+            display: flex;
+            height: 80px;
+            font-size: 20px;
+            font-weight: bold;
+            order: 1; /* تغيير ترتيب العنصر */
+            gap: 50%;
+        }
+        .CART1{
+          width: 100%;
+          text-align: left;
+        }
+        .totale{
+          display: flex;
+          gap: 4%;
+          padding: 3%;
+
+        }
+        .details1{
+          gap: 8px;
+          flex-direction: column;
+          display: flex;
+          justify-content: start;
+          align-items: start;
+          width: 20%;
+          background-color: rgb(255, 255, 255);
+          height: fit-content;
+          padding: 2%;
+          border-radius: 4px;
+
+        }
+        .purchase-button {
+          
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+
+.purchase-button:hover {
+  background-color: #45a049;
+}
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.btn1 {
+  background-color: transparent;
+  position: relative;
+  border: none;
+}
+
+.btn1::after {
+  content: 'delete';
+  position: absolute;
+  top: -130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(168, 7, 7);
+  padding: 4px 8px;
+  border-radius: 5px;
+  transition: .2s linear;
+  transition-delay: .2s;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.icon {
+  transform: scale(1.2);
+  transition: .2s linear;
+}
+
+.btn1:hover > .icon {
+  transform: scale(1.5);
+}
+
+.btn1:hover > .icon path {
+  fill: rgb(168, 7, 7);
+}
+
+.btn1:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: -160%;
+}
+
+
+     /* ssssssssssss ssssssssssss sssssssssssss */
+     
+    .my_form{
+      padding-left: 9px;
+      padding-right: 9px;
+      background-color: rgb(255, 255, 255);
+      padding: 10px;
+      border-radius: 10px; 
+      margin-left: 2%;
+      margin-right: 2% ;
+    }
+
+
+    h1 {
+        color: #050505;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 10px; 
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    /* تحديد عرض الخلايا */
+    td {
+        width: 1%;
+    }
+    .space{
+     border: unset;
+    }

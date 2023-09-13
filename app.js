@@ -63,7 +63,7 @@ const port = process.env.port || 3000;
 
 app.get('/',homeAuth,(req,res) =>{
 
-    res.status(200).render(path.join(__dirname,'public','homePage.ejs'),{req:req});
+    res.status(200).sendFile(path.join(__dirname,'public','home2.html'),{req:req});
 })
 
 

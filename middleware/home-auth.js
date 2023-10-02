@@ -11,12 +11,19 @@ const homeAuth = async(req,res,next) =>{
     }
     try {
         const decoded = jwt.verify(token,process.env.JWT_SECRET);
+
+        if(decoded.role === 'manager')
+        {
+            req.session.isManager = true;
+        }
+
         if(decoded.isAdmin)
         {
             const orders = await Order.find({status:'Pending'});
             req.session.isAdmin = true;
             req.session.ordersLength = orders.length;
         }
+     
         else{
             req.session.normalUser = true;
         }

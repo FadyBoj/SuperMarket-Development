@@ -2,50 +2,25 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" href="../css/products.css" />
+    <link rel="stylesheet" href="../../css/modify-product.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <link
-      href="https: //fonts.googleapis.com/css2؟ family = Poppins: wght @ 500 & display = swap "
+      href="https: //fonts.googleapis.com/css2 family = Poppins: wght @ 500 & display = swap "
       rel=" stylesheet "
     />
   </head>
   <body>
     <div id="navbar">
-      <div style="display: flex; align-items: center;">
-        <img id="logo" src="../../images\logo1.png" alt="Logo">
-        <a href="/"><i class="fas fa-home"></i> Home</a>
-        <a href="/products"><i class="fas fa-shopping-bag"></i> Products</a>
-        <% if (req.session.normalUser || req.session.isAdmin ){ %>
-          <a href="/logout"><i class="fas fa-sign-in-alt"></i> Logout</a>
-          <% }%>
-          <% if (!req.session.normalUser && !req.session.isAdmin){ %>
-            <a href="/login"><i class="fas fa-sign-in-alt"></i> Log in</a>
-            <% }%>
-        <a href ="/products/cart "><i class="fas fa-shopping-cart"></i> Cart</a>
-  
-        <% if (req.session.isManager) {%>
-          <a href="/admin/add-user "><i></i>Add Employee</a>
-        <% } %>
-  
-        <% if (req.session.isAdmin){ %>
-        <a href="/admin/addproduct "><i></i>Add product</a>
-        <a href="/admin/product-list "><i></i>Product List</a>
-        <a href="/admin/orders "><i></i><div class="orders">
-          <% if(req.session.ordersLength) { %>
-          <div class="orders--length"><%= req.session.ordersLength %></div>
-          <% } %>
-  
-          <div>Orders</div></div></a>
-        <% } %>
-  
-   
-        
-  
+      <div style="display: flex; align-items: center">
+        <img id="logo" src="../../images\logo1.png" alt="Logo" />
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#products"><i class="fas fa-shopping-bag"></i> Products</a>
+        <a href="#logIn"><i class="fas fa-sign-in-alt"></i> Log in</a>
+        <a href="#cart"><i class="fas fa-shopping-cart"></i> Cart</a>
       </div>
-  
 
       <div class="containers">
         <input
@@ -92,17 +67,97 @@
       <div>Vegetables And Fruits</div>
     </div>
     <br /><br />
-    <div class="fas">
-      <div class="product-container">
-        <!-- تمثيل المنتجات سيتم إضافته هنا باستخدام JavaScript -->
-      </div>
-    </div>
+    <div class="body-container">
+      <div class="container">
+        <h1 class="center-text">Edit Product</h1>
+        <form id="product-form">
+          <label for="product-name" class="input-label">Product Name:</label>
+          <input
+            type="text"
+            id="product-name"
+            name="name"
+            class="input-field"
+            required
+            value="<%= product.title %>"
+          />
 
-    <div class="pagination">
-      <span id="prevPage" class="pagination-arrow">⇦</span>
-      <button>1</button>
-      <!-- إضافة أزرار الصفحات الأخرى هنا -->
-      <span id="nextPage" class="pagination-arrow">⇨</span>
+          <label for="product-description" class="input-label"
+            >Product Description:</label
+          >
+          <input
+            type="text"
+            id="product-description"
+            name="description"
+            class="input-field"
+            required
+            value="<%= product.description %>"
+          />
+
+          <label for="product-price" class="input-label">Product Price:</label>
+          <input
+            type="number"
+            id="product-price"
+            name="price"
+            class="input-field"
+            required
+            value="<%= product.price %>"
+          />
+
+          <label for="product-quantity" class="input-label">Quantity:</label>
+          <input
+            type="number"
+            id="product-quantity"
+            name="quantity"
+            class="input-field"
+            required
+            value="<%= product.quantity %>"
+          />
+
+          <div class="input_container">
+     
+     
+     
+            <label class="input_label" for="price_field">Product Type</label>
+      
+      
+      
+            <select name="category" class="custom-select">
+              <option value="">Choose a type</option>
+              <option value="Sweets">Sweets  </option>
+              <option value="Legumes">Legumes </option>
+              <option value="Canned Food">Canned Food</option>
+              <option value="Frozen Foods">Frozen Foods </option>
+              <option value="Carbonated Water">Carbonated Water </option>
+              <option value="Cleaning Products">Cleaning Products </option>
+              <option value="Vegetables And Fruits">Vegetables And Fruits </option>
+            </select>
+          
+          
+          </div>
+
+          <div class="file-input-container">
+            <label for="product-image" class="image-button">
+              <span>Select Images</span>
+              <input
+                type="file"
+                id="product-image"
+                name="images"
+                accept="image/*"
+                class="image-input"
+                multiple
+                required
+              />
+            </label>
+          </div>
+
+          <!-- مكان عرض الصور المحددة -->
+          <div id="image-preview" class="image-preview">
+            <!-- ستظهر الصور هنا -->
+          </div>
+
+          <button type="submit" class="save-button">Save</button>
+        </form>
+      </div>
     </div>
     <br />
     <footer>
@@ -228,8 +283,8 @@ Copyright &copy; www.UltraMarket.com All Rights Reserved.</pre
       </section>
     </footer>
 
+    <script> const id = '<%= product._id %>' </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <script src="../js/products.js"></script>
+    <script src="../../js/modify-product.js"></script>
   </body>
 </html>

@@ -68,8 +68,10 @@ const login = async(req,res) =>{
         email:checkUser[0].email,
         verified:checkUser[0].verified,
         isAdmin:checkUser[0].Admin,
+        role:checkUser[0].role,
         address:checkUser[0].address,
         previousOrders:checkUser[0].previousOrders
+
     }
 
 
@@ -85,6 +87,7 @@ const logout = async(req,res) =>{
         res.clearCookie('jwtToken');
         delete req.session.isAdmin;
         delete req.session.normalUser;
+        delete req.session.isManager
         res.redirect('/')
     }
     else{
@@ -121,6 +124,7 @@ const verify = async (req,res) =>{
             email:user[0].email,
             verified:true,
             isAdmin:user[0].Admin,
+            role:user[0].role,
             address:user[0].address,
             previousOrders:user[0].previousOrders
         }
@@ -205,6 +209,7 @@ const createUser = async (req,res) =>{
             verified:createdUser.verified,
             isAdmin:createdUser.Admin,
             address:createdUser.address,
+            role:checkUser[0].role,
             previousOrders:createdUser.previousOrders
         }
     
@@ -237,6 +242,7 @@ const googleSignup = async(req,res) =>{
                 verified:checkUser[0].verified,
                 isAdmin:checkUser[0].Admin,
                 address:checkUser[0].address,
+                role:checkUser[0].role,
                 previousOrders:checkUser[0].previousOrders
             }
 
@@ -268,6 +274,7 @@ const googleSignup = async(req,res) =>{
         email:createdUser.email,
         verified:createdUser.verified,
         isAdmin:createdUser.Admin,
+        role:checkUser.role,
         address:createdUser.address,
         previousOrders:createdUser.previousOrders
     }
@@ -336,6 +343,7 @@ const getGoogleData = async(req,res) =>{
             email:updatedUser[0].email,
             verified:updatedUser[0].verified,
             isAdmin:updatedUser[0].Admin,
+            role:updatedUser[0].role,
             address:updatedUser[0].address,
             previousOrders:updatedUser[0].previousOrders
         }

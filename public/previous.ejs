@@ -21,6 +21,7 @@
       <a href ="/products/cart "><i class="fas fa-shopping-cart"></i> Cart</a>
       <% if (req.session.isAdmin){ %>
       <a href="/admin/addproduct "><i></i>Add product</a>
+      <a href="/admin/product-list "><i></i>Product List</a>
       <a href="/admin/orders "><i></i><div class="orders">
         <% if(req.session.ordersLength) { %>
         <div class="orders--length"><%= req.session.ordersLength %></div>
@@ -72,7 +73,7 @@
               <!--First order-->
               <td><%= result[i].products[0].price %> EGP</td>
               <td><%= result[i].products[0].title %></td>
-              <td><img src=<%= result[i].products[0].image %> alt="Product A"></td>
+              <td><img src=<%= result[i].products[0].images[0] %> alt="Product A"></td>
               <!--End of First order-->
 
           </tr>
@@ -82,7 +83,7 @@
               <% for(let k = 1; k < result[i].products.length; k++) { %>
               <td><%= result[i].products[k].price %> EGY</td>
               <td><%= result[i].products[k].title %></td>
-              <td><img src=<%= result[i].products[k].image %> alt="Product B"></td>
+              <td><img src=<%= result[i].products[k].images[0] %> alt="Product B"></td>
                 <% } %>
               <% } %>
           <tr><td class="space"><br></td></tr> 

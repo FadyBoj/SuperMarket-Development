@@ -11,12 +11,17 @@ const Product = mongoose.Schema({
         required:true,
     },
 
+    description:{
+        type:String,
+        required:false
+    },
+
     category:{
         type:String,
         required:true,
     },
-    image:{
-        type:String,
+    images:{
+        type:Array
     },
 
     createdAt:{

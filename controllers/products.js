@@ -37,6 +37,19 @@ const cartPage = async(req,res) =>{
     
 }
 
+const singleProduct = async(req,res) =>{
+    const { id } = req.params;
+
+    try {
+        const product = await Product.find({_id:id});
+        console.log(product)
+        return res.status(200).render(path.join(rootDirectory,'public','singleProduct.ejs'),{product:product[0],req:req})
+    } catch (error) {
+        res.status(500).send("Server internal error")
+    }
+
+}
+
 const modifyCart = async(req,res) =>{
     const { id,qty } = req.body;
     const price = req.session.productId.filter(item => item.id === id)[0].price;
@@ -189,6 +202,41 @@ const addOrder = async(req,res) =>{
     res.status(200).json({msg:'Successfully sent the order'});
 }
 
+const buyNow = async (req,res) =>{
+
+    const { id } = req.body;
+    try {
+        const product = await Product.find({_id:id})
+        const price = product[0].price;
+
+        const newOrder = new Order({
+            senderInfo:{id:req.user.id,name:req.user.firstname + ' ' + req.user.lastname,address:req.user.address},
+            cartItems:[id],
+            totalPrice:price,
+            quantity:[1]
+        })
+
+        const createdOrder = await Order.create(newOrder);
+
+        const newOrderToClient =
+        {
+            id:createdOrder._id,
+            cartItems:[id],
+            totalPrice:price,
+            quantity:[1],
+            orderDate:createdOrder.createdAt
+        }
+        const prevOrders = await Person.find({_id:req.user.id})
+        await Person.findOneAndUpdate({_id:req.user.id},{previousOrders:[...prevOrders[0].previousOrders,newOrderToClient]});
+
+
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+
 const previousPurchasesPage = async(req,res) =>{
     const { id } = req.user;
    
@@ -224,5 +272,7 @@ module.exports = {getAllProducts,
                   deleteCartItem,
                   cartItems,
                   addOrder,
-                  previousPurchasesPage
+                  previousPurchasesPage,
+                  singleProduct,
+                  buyNow
                  };

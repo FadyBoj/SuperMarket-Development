@@ -9,7 +9,7 @@
 <body>
   <div id="navbar">
     <div style="display: flex; align-items: center;">
-      <img id="logo" src="../images\logo1.png" alt="Logo">
+      <img id="logo" src="../../images\logo1.png" alt="Logo">
       <a href="/"><i class="fas fa-home"></i> Home</a>
       <a href="/products"><i class="fas fa-shopping-bag"></i> Products</a>
       <% if (req.session.normalUser || req.session.isAdmin ){ %>
@@ -19,17 +19,27 @@
           <a href="/login"><i class="fas fa-sign-in-alt"></i> Log in</a>
           <% }%>
       <a href ="/products/cart "><i class="fas fa-shopping-cart"></i> Cart</a>
+
+      <% if (req.session.isManager) {%>
+        <a href="/admin/add-user "><i></i>Add Employee</a>
+      <% } %>
+
       <% if (req.session.isAdmin){ %>
       <a href="/admin/addproduct "><i></i>Add product</a>
+      <a href="/admin/product-list "><i></i>Product List</a>
       <a href="/admin/orders "><i></i><div class="orders">
         <% if(req.session.ordersLength) { %>
         <div class="orders--length"><%= req.session.ordersLength %></div>
         <% } %>
+
         <div>Orders</div></div></a>
       <% } %>
+
+ 
       
 
     </div>
+
 
     <div class="containers1">
       <input placeholder="Type to search..." required="" class="input1 searchInput" name="text" type="text">
@@ -80,7 +90,7 @@
                     </select>
                     <div><button data-id=<%= i %> class="btn1">
                       
-                     <svg  viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
+                     <svg  viewBox="0 0 15 17.5" heig]ht="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
                      <path  transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
                    </svg>
                    </button>
@@ -88,7 +98,7 @@
                   </div>
                    </div>
                     <div class="details">
-                      <img src="<%= cartProducts[i].image %>" alt="Producer" 1>
+                      <img src="<%= cartProducts[i].images[0] %>" alt="Producer" 1>
                       <div class="name"><%= cartProducts[i].title %></div>
                     </div>
                 </li>

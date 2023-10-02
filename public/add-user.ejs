@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <link rel="stylesheet" href="../css/products.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link
-      href="https: //fonts.googleapis.com/css2؟ family = Poppins: wght @ 500 & display = swap "
-      rel=" stylesheet "
-    />
+    <link rel="stylesheet" href="../../css/add-user.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Employee Account</title>
+    <!-- Include zxcvbn.js library from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
   </head>
   <body>
     <div id="navbar">
@@ -46,19 +42,18 @@
   
       </div>
   
-
-      <div class="containers">
+      <div class="containers1">
         <input
           placeholder="Type to search..."
           required=""
-          class="input"
+          class="input1"
           name="text"
           type="text"
         />
-        <div class="icon">
+        <div class="icon1">
           <svg
             viewBox="0 0 512 512"
-            class="ionicon"
+            class="ionicon1"
             xmlns="http://www.w3.org/2000/svg"
           >
             <title>Search</title>
@@ -91,24 +86,131 @@
       <div>Carbonated Water</div>
       <div>Vegetables And Fruits</div>
     </div>
-    <br /><br />
-    <div class="fas">
-      <div class="product-container">
-        <!-- تمثيل المنتجات سيتم إضافته هنا باستخدام JavaScript -->
-      </div>
+
+    <div class="container">
+      <h1 class="h1">Create Employee Account</h1>
+      <form id="add-user-form">
+        <div class="center-input">
+          <label for="username" class="custom-label">First name:</label>
+          <input
+            type="text"
+            id="firstname"
+            name="username"
+            class="custom-input"
+            required
+          />
+
+          <label for="username" class="custom-label">Last name:</label>
+          <input
+            type="text"
+            id="username"
+            name="lastname"
+            class="custom-input"
+            required
+          />
+
+          <label for="username" class="custom-label">Email:</label>
+          <input
+            type="text"
+            id="username"
+            name="email"
+            class="custom-input"
+            required
+          />
+
+          <label for="phone" class="custom-label">Phone Number:</label>
+          <input
+            type="text"
+            id="phone"
+            name="phonenumber"
+            class="custom-input"
+            required
+          />
+
+          <label for="address" class="custom-label">Address:</label>
+          <textarea
+            id="address"
+            name="address"
+            rows="4"
+            required
+            class="custom-input"
+          ></textarea>
+
+          <label for="position" class="custom-label">Position:</label>
+          <select id="position" name="position" class="custom-select">
+            <option value="Assistant Manager">Assistant Manager</option>
+            <option value="Branch 2">Branch 2</option>
+            <option value="Branch 3">Branch 3</option>
+          </select>
+
+          <label for="branch" class="custom-label">Branch:</label>
+          <select id="branch" name="branch" class="custom-select">
+            <option value="Branch 1">Branch 1</option>
+            <option value="Branch 2">Branch 2</option>
+            <option value="Branch 3">Branch 3</option>
+          </select>
+
+          <!-- Password field -->
+          <label for="password" class="custom-label">Password:</label>
+          <div class="password-container">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="custom-input"
+              required
+            />
+            <span class="password-toggle" id="password_toggle">🙈</span>
+          </div>
+
+          <!-- Confirm Password field -->
+          <label for="confirm_password" class="custom-label"
+            >Confirm Password:</label
+          >
+          <div class="password-container">
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              class="custom-input"
+              required
+            />
+            <span class="password-toggle" id="confirm_password_toggle">🙈</span>
+          </div>
+
+          <!-- Password strength estimation -->
+          <div class="custom-password-strength">
+            <span>Password Strength:</span>
+            <progress
+              id="password_strength_bar"
+              value="0"
+              max="4"
+              class="custom-password-strength-bar"
+            ></progress>
+            <span id="password_strength_text">Weak</span>
+          </div>
+
+          <!-- Weak password alert message -->
+          <div class="custom-password-alert"></div>
+
+          <!-- Error message -->
+          <div class="custom-error-message"></div>
+
+          <!-- Success message -->
+          <div class="custom-success-message"></div>
+        </div>
+
+        <button type="submit" class="custom-button">
+          <div>Create Account</div>
+          <div><img class="progress" src="../../images/progress2.svg" /></div>
+        </button>
+      </form>
     </div>
 
-    <div class="pagination">
-      <span id="prevPage" class="pagination-arrow">⇦</span>
-      <button>1</button>
-      <!-- إضافة أزرار الصفحات الأخرى هنا -->
-      <span id="nextPage" class="pagination-arrow">⇨</span>
-    </div>
-    <br />
     <footer>
-      <section class="client-container">
-        <div id="clinet">
-          <div class="client-item">
+      <section class="client-container1">
+        <div id="clinet1">
+          <div class="client-item1">
             <ul>
               <li><a href="">About Us</a></li>
               <li><a href="">Job Application</a></li>
@@ -121,14 +223,14 @@
             <br />
             <br />
 
-            <div class="pics">
-              <div class="light-button">
-                <button class="bt">
-                  <div class="light-holder">
-                    <div class="dot"></div>
-                    <div class="light"></div>
+            <div class="pics1">
+              <div class="light2-button1">
+                <button class="bt1">
+                  <div class="light2-holder1">
+                    <div class="dot1"></div>
+                    <div class="light2"></div>
                   </div>
-                  <div class="button-holder">
+                  <div class="button-holder1">
                     <svg
                       role="img"
                       viewBox="0 0 24 24"
@@ -144,12 +246,12 @@
               </div>
 
               <div class="social-button">
-                <button class="btn">
-                  <div class="light-holder">
-                    <div class="dot"></div>
-                    <div class="light"></div>
+                <button class="bt1n">
+                  <div class="light2-holder1">
+                    <div class="dot1"></div>
+                    <div class="light2"></div>
                   </div>
-                  <div class="button-holder">
+                  <div class="button-holder1">
                     <svg
                       role="img"
                       viewBox="0 0 24 24"
@@ -167,11 +269,11 @@
               <div class="YouTube-button">
                 <!-- قم بتغيير اسم الـ class والـ id هنا -->
                 <button class="my-button">
-                  <div class="light-holder">
-                    <div class="dot"></div>
-                    <div class="light"></div>
+                  <div class="light2-holder1">
+                    <div class="dot1"></div>
+                    <div class="light2"></div>
                   </div>
-                  <div class="button-holder">
+                  <div class="button-holder1">
                     <svg
                       role="img"
                       viewBox="0 0 24 24"
@@ -187,19 +289,19 @@
               </div>
 
               <div class="Instagram-button">
-                <button class="Instagram_bt">
-                  <div class="light-holder">
-                    <div class="dot"></div>
-                    <div class="light"></div>
+                <button class="Instagram_bt1">
+                  <div class="light2-holder1">
+                    <div class="dot1"></div>
+                    <div class="light2"></div>
                   </div>
-                  <div class="button-holder">
+                  <div class="button-holder1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="100"
                       height="512"
                       viewBox="0 0 512 512"
                     >
-                      <title>ionicons-v5_logos</title>
+                      <title>ionicon1s-v5_logos</title>
                       <path
                         d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"
                       />
@@ -222,14 +324,14 @@
         <br />
         <br />
         <pre class="footp">
-Copyright &copy; www.UltraMarket.com All Rights Reserved.</pre
+Copyright &copy; www.UltraMarket.com All Rights Reserved.
+</pre
         >
         <br /><br />
       </section>
     </footer>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <script src="../js/products.js"></script>
+    <script src="../../js/add-user.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
 }
 #navbar {
   background-color: #333;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   transition: top 0.3s;
@@ -29,6 +29,8 @@
 }
 
 body {
+  font-family: Arial, sans-serif;
+  background-color: #ddd;
   margin: 0;
   padding-top: 80px;
 }
@@ -39,11 +41,11 @@ pre {
   font-size: 190%;
   top: auto;
 }
-.containers {
+.containers1 {
   position: relative;
   --size-button: 40px;
 }
-.input {
+.input1 {
   padding-left: var(--size-button);
   height: var(--size-button);
   font-size: 15px;
@@ -59,21 +61,21 @@ pre {
   cursor: pointer;
 }
 
-.input:focus,
-.input:not(:invalid) {
+.input1:focus,
+.input1:not(:invalid) {
   width: 200px;
   cursor: text;
   box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%),
     inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
 }
 
-.input:focus + .icon,
-.input:not(:invalid) + .icon {
+.input1:focus + .icon1,
+.input1:not(:invalid) + .icon1 {
   pointer-events: all;
   cursor: pointer;
 }
 
-.containers .icon {
+.containers1 .icon1 {
   color: #ffffff;
   position: absolute;
   width: var(--size-button);
@@ -84,7 +86,7 @@ pre {
   pointer-events: none;
 }
 
-.containers .icon svg {
+.containers1 .icon1 svg {
   width: 100%;
   height: 100%;
 }
@@ -132,10 +134,47 @@ pre {
   margin: 0px;
   padding: 0px;
 }
+
+* {
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  /* قواعد CSS لشاشات الهواتف الذكية */
+  /* يمكنك هنا تغيير الخصائص مثل الحجم والهوامش والألوان حسب احتياجاتك */
+  #navbar {
+    padding: 10px;
+  }
+
+  #logo {
+    width: 15%;
+  }
+
+  #navbar a {
+    font-size: 16px;
+  }
+  #bar {
+    height: auto;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  #bar div {
+    width: 100%;
+    padding: 5px;
+  }
+
+  li {
+    font-size: 120%; /* تصغير حجم النص ليناسب شاشات الهواتف */
+  }
+
+  pre {
+    font-size: 150%; /* تصغير حجم النص ليناسب شاشات الهواتف */
+  }
+}
 footer {
   padding: 3%;
   width: 100%;
-  height: 20%;
+  height: 100vh;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -160,13 +199,13 @@ ul li a {
   margin-right: 1%;
 }
 
-.pics {
+.pics1 {
   display: flex;
   flex-direction: row;
   gap: 2%;
 }
 
-.Instagram-button button.Instagram_bt {
+.Instagram-button button.Instagram_bt1 {
   position: relative;
   height: 200px;
   display: flex;
@@ -176,7 +215,7 @@ ul li a {
   border: none;
 }
 
-.Instagram-button button.Instagram_bt .button-holder {
+.Instagram-button button.Instagram_bt1 .button-holder1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -192,13 +231,13 @@ ul li a {
   outline-offset: 20;
 }
 
-.Instagram-button button.Instagram_bt .button-holder svg {
+.Instagram-button button.Instagram_bt1 .button-holder1 svg {
   height: 50px;
   fill: #0f0f0f;
   transition: 300ms;
 }
 
-.Instagram-button button.Instagram_bt .light-holder {
+.Instagram-button button.Instagram_bt1 .light2-holder1 {
   position: absolute;
   height: 200px;
   width: 100px;
@@ -207,7 +246,7 @@ ul li a {
   align-items: center;
 }
 
-.Instagram-button button.Instagram_bt .light-holder .dot {
+.Instagram-button button.Instagram_bt1 .light2-holder1 .dot1 {
   position: absolute;
   top: 0;
   width: 10px;
@@ -217,7 +256,7 @@ ul li a {
   z-index: 2;
 }
 
-.Instagram-button button.Instagram_bt .light-holder .light {
+.Instagram-button button.Instagram_bt1 .light2-holder1 .light2 {
   position: absolute;
   top: 0;
   width: 200px;
@@ -226,17 +265,17 @@ ul li a {
   background: transparent;
 }
 
-.Instagram-button button.Instagram_bt:hover .button-holder svg {
+.Instagram-button button.Instagram_bt1:hover .button-holder1 svg {
   fill: #e4405f; /* تغيير لون الشعار الخاص بـ Instagram */
 }
 
-.Instagram-button button.Instagram_bt:hover .button-holder {
+.Instagram-button button.Instagram_bt1:hover .button-holder1 {
   color: #e4405f; /* تغيير لون النص إلى لون Instagram */
   outline: #e4405f 2px solid; /* تغيير لون الحدود إلى لون Instagram */
   outline-offset: 2px;
 }
 
-.Instagram-button button.Instagram_bt:hover .light-holder .light {
+.Instagram-button button.Instagram_bt1:hover .light2-holder1 .light2 {
   background: rgb(255, 255, 255);
   background: linear-gradient(
     180deg,
@@ -246,7 +285,7 @@ ul li a {
   );
 }
 
-.light-button button.bt {
+.light2-button1 button.bt1 {
   position: relative;
   height: 200px;
   display: flex;
@@ -256,7 +295,7 @@ ul li a {
   border: none;
 }
 
-.light-button button.bt .button-holder {
+.light2-button1 button.bt1 .button-holder1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -272,13 +311,13 @@ ul li a {
   outline-offset: 20;
 }
 
-.light-button button.bt .button-holder svg {
+.light2-button1 button.bt1 .button-holder1 svg {
   height: 50px;
   fill: #0f0f0f;
   transition: 300ms;
 }
 
-.light-button button.bt .light-holder {
+.light2-button1 button.bt1 .light2-holder1 {
   position: absolute;
   height: 200px;
   width: 100px;
@@ -287,7 +326,7 @@ ul li a {
   align-items: center;
 }
 
-.light-button button.bt .light-holder .dot {
+.light2-button1 button.bt1 .light2-holder1 .dot1 {
   position: absolute;
   top: 0;
   width: 10px;
@@ -297,7 +336,7 @@ ul li a {
   z-index: 2;
 }
 
-.light-button button.bt .light-holder .light {
+.light2-button1 button.bt1 .light2-holder1 .light2 {
   position: absolute;
   top: 0;
   width: 200px;
@@ -306,17 +345,17 @@ ul li a {
   background: transparent;
 }
 
-.light-button button.bt:hover .button-holder svg {
+.light2-button1 button.bt1:hover .button-holder1 svg {
   fill: rgb(59, 89, 152); /* تغيير لون الشعار الخاص بـ Facebook */
 }
 
-.light-button button.bt:hover .button-holder {
+.light2-button1 button.bt1:hover .button-holder1 {
   color: rgba(59, 89, 152, 1); /* تغيير لون النص إلى اللون الخاص بـ Facebook */
   outline: rgba(59, 89, 152, 1) 2px solid; /* تغيير لون الحدود إلى اللون الخاص بـ Facebook */
   outline-offset: 2px;
 }
 
-.light-button button.bt:hover .light-holder .light {
+.light2-button1 button.bt1:hover .light2-holder1 .light2 {
   background: rgb(255, 255, 255);
   background: linear-gradient(
     180deg,
@@ -326,7 +365,7 @@ ul li a {
   );
 }
 
-.social-button button.btn {
+.social-button button.bt1n {
   position: relative;
   height: 200px;
   display: flex;
@@ -336,7 +375,7 @@ ul li a {
   border: none;
 }
 
-.social-button button.btn .button-holder {
+.social-button button.bt1n .button-holder1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -352,13 +391,13 @@ ul li a {
   outline-offset: 20;
 }
 
-.social-button button.btn .button-holder svg {
+.social-button button.bt1n .button-holder1 svg {
   height: 50px;
   fill: #0f0f0f;
   transition: 300ms;
 }
 
-.social-button button.btn .light-holder {
+.social-button button.bt1n .light2-holder1 {
   position: absolute;
   height: 200px;
   width: 100px;
@@ -367,7 +406,7 @@ ul li a {
   align-items: center;
 }
 
-.social-button button.btn .light-holder .dot {
+.social-button button.bt1n .light2-holder1 .dot1 {
   position: absolute;
   top: 0;
   width: 10px;
@@ -377,7 +416,7 @@ ul li a {
   z-index: 2;
 }
 
-.social-button button.btn .light-holder .light {
+.social-button button.bt1n .light2-holder1 .light2 {
   position: absolute;
   top: 0;
   width: 200px;
@@ -386,17 +425,17 @@ ul li a {
   background: transparent;
 }
 
-.social-button button.btn:hover .button-holder svg {
+.social-button button.bt1n:hover .button-holder1 svg {
   fill: #1da1f2;
 }
 
-.social-button button.btn:hover .button-holder {
+.social-button button.bt1n:hover .button-holder1 {
   color: #1da1f2;
   outline: #1da1f2 2px solid;
   outline-offset: 2px;
 }
 
-.social-button button.btn:hover .light-holder .light {
+.social-button button.bt1n:hover .light2-holder1 .light2 {
   background: rgb(255, 255, 255);
   background: linear-gradient(
     180deg,
@@ -416,7 +455,7 @@ ul li a {
   border: none;
 }
 
-.YouTube-button button.my-button .button-holder {
+.YouTube-button button.my-button .button-holder1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -432,13 +471,13 @@ ul li a {
   outline-offset: 20;
 }
 
-.YouTube-button button.my-button .button-holder svg {
+.YouTube-button button.my-button .button-holder1 svg {
   height: 50px;
   fill: #0f0f0f;
   transition: 300ms;
 }
 
-.YouTube-button button.my-button .light-holder {
+.YouTube-button button.my-button .light2-holder1 {
   position: absolute;
   height: 200px;
   width: 100px;
@@ -447,7 +486,7 @@ ul li a {
   align-items: center;
 }
 
-.YouTube-button button.my-button .light-holder .dot {
+.YouTube-button button.my-button .light2-holder1 .dot1 {
   position: absolute;
   top: 0;
   width: 10px;
@@ -457,7 +496,7 @@ ul li a {
   z-index: 2;
 }
 
-.YouTube-button button.my-button .light-holder .light {
+.YouTube-button button.my-button .light2-holder1 .light2 {
   position: absolute;
   top: 0;
   width: 200px;
@@ -466,17 +505,17 @@ ul li a {
   background: transparent;
 }
 
-.YouTube-button button.my-button:hover .button-holder svg {
+.YouTube-button button.my-button:hover .button-holder1 svg {
   fill: rgba(255, 0, 0, 1);
 }
 
-.YouTube-button button.my-button:hover .button-holder {
+.YouTube-button button.my-button:hover .button-holder1 {
   color: rgba(255, 0, 0, 1);
   outline: rgba(255, 0, 0, 1) 2px solid;
   outline-offset: 2px;
 }
 
-.YouTube-button button.my-button:hover .light-holder .light {
+.YouTube-button button.my-button:hover .light2-holder1 .light2 {
   background: rgb(255, 255, 255);
   background: linear-gradient(
     180deg,
@@ -489,170 +528,266 @@ ul li a {
 * {
   box-sizing: border-box;
 }
-
-/* ssssssssssss ssssssssssss sssssssssssss */
-
 body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.body {
   font-family: Arial, sans-serif;
-}
-
-.product-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.card {
-  margin: 16px;
-  width: 220px;
-  height: 40%;
-  padding: 0.8em;
-  background: #f5f5f5;
-  position: relative;
-  overflow: visible;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.card-img {
-  height: auto;
-  width: auto;
-  border-radius: 0.5rem;
-  transition: 0.3s ease;
-  object-fit: cover;
-}
-
-.card-info {
-  padding-top: 2%;
-}
-
-.svg-icon {
-  width: 20px;
-  height: 20px;
-  fill: #000; /* لون افتراضي للرمز */
-  transition: fill 0.3s ease-in-out;
-}
-
-.svg-icon:hover {
-  fill: #fff; /* لون الرمز عند تمرير المؤشر عليه (أبيض في هذه الحالة) */
-}
-
-.card-footer {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  border-top: 1px solid #ddd;
-}
-
-.text-title {
-  font-weight: 900;
-  font-size: 1.2em;
-  line-height: 1.5;
-}
-
-.text-body {
-  font-weight: 900;
-  font-size: 0.9em;
-  padding-bottom: 10px;
-}
-
-.card-button {
-  border: 1px solid #252525;
-  display: flex;
-  padding: 0.3em;
-  cursor: pointer;
-  border-radius: 50px;
-  transition: 0.3s ease-in-out;
-}
-
-.card-img:hover {
-  transform: translateY(-10%);
-  box-shadow: rgba(63, 125, 226, 0.25) 0px 13px 47px -5px,
-    rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
-}
-
-.card-button:hover {
-  border: 1px solid #000000;
-  background-color: #000000;
-}
-
-.images {
-  width: 100%;
-}
-
-.fas {
-  margin-top: 3%;
-}
-
-/* أنماط صفحات البيجينيشن */
-.pagination {
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  flex-direction: row; /* تغيير ترتيب العناصر إلى الجهة المعاكسة */
+  height: 100vh;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
 }
 
-.pagination-arrow {
-  font-size: 2em;
-  cursor: pointer;
-  margin: 0 5px;
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
-.pagination-arrow:hover {
-  color: #969595;
+.product {
+  padding: 20px;
+  width: 90%;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: right;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
 }
 
-#prevPage {
-  margin-right: 10px; /* المسافة بين الأسهم والأرقام */
+.product-details {
+  flex: 1;
+  margin-right: 20px;
+  max-width: 100%;
 }
 
-#nextPage {
-  margin-left: 10px; /* المسافة بين الأسهم والأرقام */
-}
-
-.pagination button {
-  font-size: 1.5em; /* حجم الخط */
-  padding: 5px 10px; /* هامش داخلي للزر */
-  margin: 0 5px; /* المسافة بين الأزرار */
-  background-color: #f5f5f5; /* لون الخلفية */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+.gallery-container {
+  width: 100%;
   position: relative;
+  text-align: center;
+  max-width: 400px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  perspective: 1000px;
 }
 
-.pagination button:hover {
-  background-color: #000000; /* لون الخلفية عند التحويل */
-  color: white; /* لتحسين قراءة النص على الصفحة النشطة */
-
-  /* تغيير عرض الخط عند التحويل */
-  transition: background-color 0.3s ease-in-out;
-}
-
-/* الخط تحت الأرقام والأسهم */
-.pagination button:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px; /* ارتفاع الخط */
-  background: #000000; /* لون الخط */
-  transition: width 0.3s ease-in-out; /* تحريك الخط بسلاسة */
+.nav-btn {
   position: absolute;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.gallery-container:hover .nav-btn {
+  opacity: 1;
+}
+
+.gallery-container:hover {
+  transform: scale(1.05);
+}
+
+#prev-btn {
   left: 0;
+}
+
+#next-btn {
   right: 0;
 }
 
-/* عند تحويل المؤشر إلى الزر، قم بتوسيع الخط ليشمل الزر بالكامل */
-.pagination button:hover:after {
-  width: 100%;
-  transition: width 0.3s ease-in-out;
+#image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
 }
 
-a{
-  color: unset;
-  text-decoration: none;
+.rotate-0 {
+  transform: rotateY(0deg);
+}
+
+.rotate-90 {
+  transform: rotateY(90deg);
+}
+
+.rotate-180 {
+  transform: rotateY(180deg);
+}
+
+.rotate-270 {
+  transform: rotateY(270deg);
+}
+
+.fas {
+  font-size: 24px;
+}
+
+.product-title {
+  font-size: 28px;
+  margin-top: -10px;
+}
+
+.product-price {
+  font-size: 24px;
+  color: #b12704;
+  margin-top: 10px;
+}
+
+.product-description {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 240px;
+}
+
+.add-to-cart {
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  margin-right: 10px;
+  text-align: right;
+  display: block;
+  margin-left: auto;
+  transform: scale(1);
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.add-to-cart:hover {
+  background-color: #ffa41c;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.buy-now {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-align: right;
+  display: block;
+  margin-left: auto;
+  transform: scale(1);
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.buy-now:hover {
+  background-color: #2980b9;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Modal Buttons Styles */
+.modal-content button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.modal-content button:hover {
+  background-color: #2980b9;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  /* هنا يمكنك تعديل الأنماط للهواتف المحمولة */
+  .body {
+    margin-top: 18%;
+  }
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-details {
+    margin-top: 20px;
+  }
+
+  .action-buttons {
+    margin-top: 20px;
+  }
+
+  .add-to-cart,
+  .buy-now {
+    width: 100%; /* تقليل عرض الأزرار */
+    margin: 10px 2%;
+  }
+
+  .gallery-container {
+    max-width: 100%;
+  }
+
+  #image {
+    width: 100%;
+    height: auto;
+  }
 }

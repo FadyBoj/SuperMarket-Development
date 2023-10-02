@@ -2,13 +2,13 @@
 <html>
   <head>
     <title></title>
-    <link rel="stylesheet" href="../css/products.css" />
+    <link rel="stylesheet" href="../../css/modify-product.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <link
-      href="https: //fonts.googleapis.com/css2؟ family = Poppins: wght @ 500 & display = swap "
+      href="https: //fonts.googleapis.com/css2 family = Poppins: wght @ 500 & display = swap "
       rel=" stylesheet "
     />
   </head>
@@ -40,9 +40,6 @@
   
           <div>Orders</div></div></a>
         <% } %>
-  
-   
-        
   
       </div>
   
@@ -92,17 +89,93 @@
       <div>Vegetables And Fruits</div>
     </div>
     <br /><br />
-    <div class="fas">
-      <div class="product-container">
-        <!-- تمثيل المنتجات سيتم إضافته هنا باستخدام JavaScript -->
-      </div>
-    </div>
+    <div class="body-container">
+      <div class="container">
+        <h1 class="center-text">Add new product</h1>
+        <form id="product-form">
+          <label for="product-name" class="input-label">Product Name:</label>
+          <input
+            type="text"
+            id="product-name"
+            name="name"
+            class="input-field"
+            required
+          />
 
-    <div class="pagination">
-      <span id="prevPage" class="pagination-arrow">⇦</span>
-      <button>1</button>
-      <!-- إضافة أزرار الصفحات الأخرى هنا -->
-      <span id="nextPage" class="pagination-arrow">⇨</span>
+          <label for="product-description" class="input-label"
+            >Product Description:</label
+          >
+          <input
+            type="text"
+            id="product-description"
+            name="description"
+            class="input-field"
+            required
+          />
+
+          <label for="product-price" class="input-label">Product Price:</label>
+          <input
+            type="number"
+            id="product-price"
+            name="price"
+            class="input-field"
+            required
+          />
+
+          <label for="product-quantity" class="input-label">Quantity:</label>
+          <input
+            type="number"
+            id="product-quantity"
+            name="quantity"
+            class="input-field"
+            required
+          />
+
+          <div class="input_container">
+     
+     
+     
+            <label class="input_label" for="price_field">Product Type</label>
+      
+      
+      
+            <select name="category" class="custom-select">
+              <option value="">Choose a type</option>
+              <option value="Sweets">Sweets  </option>
+              <option value="Legumes">Legumes </option>
+              <option value="Canned Food">Canned Food</option>
+              <option value="Frozen Foods">Frozen Foods </option>
+              <option value="Carbonated Water">Carbonated Water </option>
+              <option value="Cleaning Products">Cleaning Products </option>
+              <option value="Vegetables And Fruits">Vegetables And Fruits </option>
+            </select>
+          
+          
+          </div>
+
+          <div class="file-input-container">
+            <label for="product-image" class="image-button">
+              <span>Select Images</span>
+              <input
+                type="file"
+                id="product-image"
+                name="images"
+                accept="image/*"
+                class="image-input"
+                multiple
+                required
+              />
+            </label>
+          </div>
+
+          <!-- مكان عرض الصور المحددة -->
+          <div id="image-preview" class="image-preview">
+            <!-- ستظهر الصور هنا -->
+          </div>
+
+          <button type="submit" class="save-button">Save</button>
+        </form>
+      </div>
     </div>
     <br />
     <footer>
@@ -229,7 +302,6 @@ Copyright &copy; www.UltraMarket.com All Rights Reserved.</pre
     </footer>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <script src="../js/products.js"></script>
+    <script src="../../js/addproduct.js"></script>
   </body>
 </html>

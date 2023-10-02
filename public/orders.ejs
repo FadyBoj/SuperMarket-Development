@@ -9,7 +9,7 @@
 <body>
   <div id="navbar">
     <div style="display: flex; align-items: center;">
-      <img id="logo" src="../images\logo1.png" alt="Logo">
+      <img id="logo" src="../../images\logo1.png" alt="Logo">
       <a href="/"><i class="fas fa-home"></i> Home</a>
       <a href="/products"><i class="fas fa-shopping-bag"></i> Products</a>
       <% if (req.session.normalUser || req.session.isAdmin ){ %>
@@ -19,17 +19,27 @@
           <a href="/login"><i class="fas fa-sign-in-alt"></i> Log in</a>
           <% }%>
       <a href ="/products/cart "><i class="fas fa-shopping-cart"></i> Cart</a>
+
+      <% if (req.session.isManager) {%>
+        <a href="/admin/add-user "><i></i>Add Employee</a>
+      <% } %>
+
       <% if (req.session.isAdmin){ %>
       <a href="/admin/addproduct "><i></i>Add product</a>
+      <a href="/admin/product-list "><i></i>Product List</a>
       <a href="/admin/orders "><i></i><div class="orders">
         <% if(req.session.ordersLength) { %>
         <div class="orders--length"><%= req.session.ordersLength %></div>
         <% } %>
+
         <div>Orders</div></div></a>
       <% } %>
+
+ 
       
 
     </div>
+
 
     <div class="containers">
       <input placeholder="Type to search..." required="" class="input" name="text" type="text">
